@@ -1,8 +1,5 @@
 package com.pdmtaller2.CarlosRamirez_00084020.screens
 
-
-
-
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -17,15 +14,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
-import com.pdmtaller2.CarlosRamirez_00084020.data.Dish
 import com.pdmtaller2.CarlosRamirez_00084020.data.Restaurant
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RestaurantMenuScreen(navController: NavHostController, restaurant: Restaurant, dishes: List<Dish>) {
+fun RestaurantMenuScreen(navController: NavHostController, restaurant: Restaurant) {
     var search by remember { mutableStateOf("") }
-    val filtered = dishes.filter { it.name.contains(search, ignoreCase = true) }
+    val filtered = restaurant.menu.filter { it.name.contains(search, ignoreCase = true) }
     val context = LocalContext.current
 
     Scaffold(
@@ -43,7 +38,11 @@ fun RestaurantMenuScreen(navController: NavHostController, restaurant: Restauran
             BottomNavBar(navController)
         }
     ) { padding ->
-        Column(Modifier.padding(padding).padding(16.dp)) {
+        Column(
+            Modifier
+                .padding(padding)
+                .padding(16.dp)
+        ) {
             Text(text = restaurant.description, style = MaterialTheme.typography.bodyMedium)
             Spacer(modifier = Modifier.height(8.dp))
             TextField(
@@ -64,7 +63,7 @@ fun RestaurantMenuScreen(navController: NavHostController, restaurant: Restauran
                             Image(
                                 painter = rememberAsyncImagePainter(dish.imageUrl),
                                 contentDescription = null,
-                                modifier = Modifier.size(80.dp)
+                                modifier = Modifier.size(80.dp),
                             )
                             Spacer(Modifier.width(8.dp))
                             Column {

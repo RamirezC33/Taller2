@@ -1,12 +1,11 @@
 package com.pdmtaller2.CarlosRamirez_00084020.screens
 
-
-
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -17,11 +16,10 @@ import coil.compose.rememberAsyncImagePainter
 import com.pdmtaller2.CarlosRamirez_00084020.data.Restaurant
 import com.pdmtaller2.CarlosRamirez_00084020.navigation.Screen
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RestaurantsScreen(navController: NavHostController, restaurants: List<Restaurant>) {
-    val categories = restaurants.groupBy { it.category }
+    val categories = restaurants.groupBy { it.categories.firstOrNull() ?: "Sin categoría" }
 
     Scaffold(
         topBar = {
@@ -33,7 +31,13 @@ fun RestaurantsScreen(navController: NavHostController, restaurants: List<Restau
     ) { padding ->
         LazyColumn(modifier = Modifier.padding(padding)) {
             categories.forEach { (category, list) ->
-                item { Text(text = category, style = MaterialTheme.typography.titleLarge, modifier = Modifier.padding(16.dp)) }
+                item {
+                    Text(
+                        text = category,
+                        style = MaterialTheme.typography.titleLarge,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
                 item {
                     LazyRow {
                         items(list) { restaurant ->
@@ -48,7 +52,9 @@ fun RestaurantsScreen(navController: NavHostController, restaurants: List<Restau
                                 Image(
                                     painter = rememberAsyncImagePainter(restaurant.imageUrl),
                                     contentDescription = null,
-                                    modifier = Modifier.height(120.dp).fillMaxWidth(),
+                                    modifier = Modifier
+                                        .height(120.dp)
+                                        .fillMaxWidth(),
                                     contentScale = ContentScale.Crop
                                 )
                                 Text(restaurant.name, style = MaterialTheme.typography.bodyMedium)

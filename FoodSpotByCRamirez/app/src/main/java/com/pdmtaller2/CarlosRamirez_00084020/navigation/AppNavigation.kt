@@ -1,20 +1,14 @@
 package com.pdmtaller2.CarlosRamirez_00084020.navigation
 
-
-
-
-
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.*
 import androidx.navigation.navArgument
-import com.pdmtaller2.CarlosRamirez_00084020.data.restaurantDishMap
 import com.pdmtaller2.CarlosRamirez_00084020.data.restaurants
 import com.pdmtaller2.CarlosRamirez_00084020.screens.OrdersScreen
 import com.pdmtaller2.CarlosRamirez_00084020.screens.RestaurantMenuScreen
 import com.pdmtaller2.CarlosRamirez_00084020.screens.RestaurantsScreen
 import com.pdmtaller2.CarlosRamirez_00084020.screens.SearchScreen
-
 
 sealed class Screen(val route: String) {
     object Restaurants : Screen("restaurants")
@@ -38,13 +32,13 @@ fun AppNavigation() {
         composable(Screen.Orders.route) {
             OrdersScreen()
         }
-        composable(Screen.Menu.route,
+        composable(
+            Screen.Menu.route,
             arguments = listOf(navArgument("restaurantId") { type = NavType.IntType })
         ) { backStackEntry ->
             val id = backStackEntry.arguments?.getInt("restaurantId") ?: return@composable
             val restaurant = restaurants.find { it.id == id } ?: return@composable
-            val dishes = restaurantDishMap[id] ?: emptyList()
-            RestaurantMenuScreen(navController, restaurant, dishes)
+            RestaurantMenuScreen(navController, restaurant)
         }
     }
 }

@@ -124,5 +124,66 @@ val restaurants = listOf(
             Dish(26, "Ceviche mixto", "Mariscos cocidos en limón con vegetales", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNRqcoCX5bo7CGBp9_UV5ZaK0qrO8gUJtPRQ&s"),
             Dish(27, "Pescado empanizado", "Filete de pescado con papas fritas", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-UYr7eMEWvRQmv0sOyc9laGNBC6wNtCGHUw&s")
         )
+    ),
+    Restaurant(
+        id = 10,
+        name = "El Sombrero",
+        description = "Auténtica comida mexicana con sabor casero",
+        imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ0KKlOU4KPZlofWVFXDKnnEtV4OumPs43GA&s",
+        categories = listOf("Comida Mexicana"),
+        menu = listOf(
+            Dish(28, "Quesadilla de chorizo", "Tortilla rellena de queso fundido y chorizo", "https://lh5.googleusercontent.com/proxy/sPgUdkczDNBygiqi1OfH7e8OoMkp2X138ESFWXYxJqYuNNkkQ_Edgi-jcrVYAmK0EJ37jj_Y4Dt_0Or_MNuzAXDiXz1olv0tk68LtVmnLiBuXlD5RoetCO4-PEtxM9S_x2pIi7oU1Sfx5CM"),
+            Dish(29, "Sopa azteca", "Caldo con tortilla frita, chile pasilla y crema", "https://peopleenespanol.com/thmb/zz0Zy7ZsEEs6_4iioxOUpW__h8o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/sopa-azteca-de-tortilla-2000-5589000dfa924e3fa1295e58b40e043e.jpg"),
+            Dish(30, "Chilaquiles verdes", "Tortillas fritas en salsa verde con queso y crema", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS11NsBbcfRMS968DO1qZ2ENnOZ2wyRVpHtrA&s")
+        )
+    ),
+    Restaurant(
+        id = 11,
+        name = "Bistró Central",
+        description = "Fusión internacional en un ambiente elegante",
+        imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjFKXkq-6NZsZooinBazH2MMDOWwQ-VintOw&s",
+        categories = listOf("Comida Internacional"),
+        menu = listOf(
+            Dish(31, "Salmón al limón", "Filete de salmón en salsa cítrica", "https://i.ytimg.com/vi/bHepJyPSPoI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB1Hu1GkeetF0pZ4nMIueNC81V6aQ"),
+            Dish(32, "Pollo a la mostaza", "Pechuga en salsa cremosa de mostaza dijon", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdKEkMUmTU5bWm9z_t3KqyP7k5uFcGYRlN9w&s"),
+            Dish(33, "Crema de champiñones", "Sopa cremosa con champiñones frescos", "https://images.aws.nestle.recipes/original/2024_10_18T12_15_31_badun_images.badun.es_709dc898c68a_crema_de_champinones_ideal.jpg")
+        )
+    ),
+    Restaurant(
+        id = 12,
+        name = "Vida Verde",
+        description = "Ensaladas, bowls y smoothies saludables",
+        imageUrl = "https://comedera.com/wp-content/uploads/sites/9/2021/01/vegetable-skewer-3317060_1280.jpg?resize=1200,675&quality=80",
+        categories = listOf("Comida Saludable"),
+        menu = listOf(
+            Dish(34, "Bowl de quinoa", "Quinoa, garbanzos, espinaca y hummus", "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/bdc253a0-ea6c-43a8-9483-e18cd48fdcc4/Derivates/01c80035-05c6-48ca-83d0-50171f065260.jpg"),
+            Dish(35, "Smoothie de frutos rojos", "Bebida refrescante de fresa, mora y plátano", "https://s3.amazonaws.com/static.realcaliforniamilk.com/media/foodservice/Super_Berry_Smoothie.jpg"),
+            Dish(36, "Tofu grillado", "Tofu con vegetales salteados en aceite de oliva", "https://danzadefogones.com/wp-content/uploads/2021/09/tofu-marinado-1.jpg")
+        )
+    ),
+    Restaurant(
+        id = 13,
+        name = "Olas del Pacífico",
+        description = "Delicias del mar con recetas tropicales",
+        imageUrl = "https://www.recetasnestlecam.com/sites/default/files/2023-02/plato-receta-cazuela-de-mariscos.jpg",
+        categories = listOf("Mariscos"),
+        menu = listOf(
+            Dish(37, "Tostadas de atún", "Atún fresco marinado sobre tostadas crujientes", "https://i0.wp.com/mesasanamx.com/wp-content/uploads/2022/07/tostadas-de-atun-estilo-contramar.jpg?resize=500%2C500&ssl=1"),
+            Dish(38, "Coctel de camarón", "Camarones con salsa roja, aguacate y galletas", "https://www.muydelish.com/wp-content/uploads/2024/08/mexican-shrimp-cocktail.jpg"),
+            Dish(39, "Pescado a la talla", "Filete de pescado a la parrilla con salsa de chiles", "https://mesasanamx.com/wp-content/uploads/2022/08/pescado-a-la-talla.jpg")
+        )
+    ),
+    Restaurant(
+        id = 14,
+        name = "Chicken Spot",
+        description = "Especialistas en pollo frito crujiente",
+        imageUrl = "https://static01.nyt.com/images/2024/11/24/multimedia/Buttermilk-Fried-Chickenrex-vtlk/Buttermilk-Fried-Chickenrex-vtlk-articleLarge.jpg",
+        categories = listOf("Comida Rápida"),
+        menu = listOf(
+            Dish(40, "Bucket Clásico", "Porción familiar de pollo frito con papas", "https://www.preparedfoodphotos.com/wp-content/uploads/FriedChicken004_ADL-2.jpg"),
+            Dish(41, "Chicken Tenders", "Tiritas de pollo empanizado con salsas", "https://www.tasteofhome.com/wp-content/uploads/2018/01/Fried-Chicken-Strips_EXPS_FT24_25184_JR_0301_1.jpg"),
+            Dish(42, "Hamburguesa de pollo spicy", "Filete empanizado con mayonesa picante", "https://comedera.com/wp-content/uploads/sites/9/2023/07/Hamburguesa-de-pollo-picante.jpg")
+        )
     )
+
 )

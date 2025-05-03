@@ -11,6 +11,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -25,6 +26,7 @@ fun RestaurantMenuScreen(navController: NavHostController, restaurant: Restauran
     val context = LocalContext.current
 
     Scaffold(
+        containerColor = Color.White,
         topBar = {
             TopAppBar(
                 title = { Text(restaurant.name) },
@@ -49,16 +51,28 @@ fun RestaurantMenuScreen(navController: NavHostController, restaurant: Restauran
             TextField(
                 value = search,
                 onValueChange = { search = it },
-                label = { Text("Buscar platillo") },
-                modifier = Modifier.fillMaxWidth()
+                label = { Text("Buscar platillo", color = Color.Black) },
+                modifier = Modifier.fillMaxWidth(),
+                colors = TextFieldDefaults.colors(
+                    focusedContainerColor = Color.White,
+                    unfocusedContainerColor = Color.White,
+                    focusedTextColor = Color.Black,
+                    unfocusedTextColor = Color.Black,
+                    focusedLabelColor = Color.Black,
+                    unfocusedLabelColor = Color.DarkGray,
+                    cursorColor = Color.Black
+                )
             )
+
             Spacer(modifier = Modifier.height(8.dp))
             LazyColumn {
                 items(filtered) { dish ->
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 4.dp)
+                            .padding(vertical = 4.dp),
+                        colors = CardDefaults.cardColors(containerColor = Color.White)
+
                     ) {
                         Row(
                             modifier = Modifier
@@ -76,11 +90,18 @@ fun RestaurantMenuScreen(navController: NavHostController, restaurant: Restauran
                             Column {
                                 Text(dish.name, style = MaterialTheme.typography.titleMedium)
                                 Text(dish.description)
-                                Button(onClick = {
-                                    Toast.makeText(context, "${dish.name} agregado al carrito", Toast.LENGTH_SHORT).show()
-                                }) {
+                                Button(
+                                    onClick = {
+                                        Toast.makeText(context, "${dish.name} agregado al carrito", Toast.LENGTH_SHORT).show()
+                                    },
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = Color.Black,
+                                        contentColor = Color.White
+                                    )
+                                ) {
                                     Text("Agregar al carrito")
                                 }
+
                             }
                         }
                     }

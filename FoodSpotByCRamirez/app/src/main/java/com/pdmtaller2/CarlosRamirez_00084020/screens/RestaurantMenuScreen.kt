@@ -9,6 +9,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -59,11 +60,17 @@ fun RestaurantMenuScreen(navController: NavHostController, restaurant: Restauran
                             .fillMaxWidth()
                             .padding(vertical = 4.dp)
                     ) {
-                        Row(Modifier.padding(8.dp)) {
+                        Row(
+                            modifier = Modifier
+                                .padding(8.dp)
+                                .fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
                             Image(
                                 painter = rememberAsyncImagePainter(dish.imageUrl),
-                                contentDescription = null,
-                                modifier = Modifier.size(80.dp),
+                                contentDescription = dish.name,
+                                modifier = Modifier
+                                    .size(80.dp)
                             )
                             Spacer(Modifier.width(8.dp))
                             Column {

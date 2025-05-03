@@ -45,7 +45,7 @@ val restaurants = listOf(
         id = 3,
         name = "Sushi King",
         description = "Sushi, sopas y más",
-        imageUrl = "https://upload.wikimedia.org/wikipedia/en/5/59/Sushi_King_logo%2C_Jan_2025.png",
+        imageUrl = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/7b/c7/6c/ricos-rolls-recien-hechos.jpg?w=900&h=500&s=1",
         categories = listOf("Comida Asiática"),
         menu = listOf(
             Dish(7, "Sushi Sumo", "Sushi de salmón, con camarones tempurizados", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCEhCcSOS4cmDJ2sTiIonzhzB0Z2CFjVdJOA&s"),
@@ -55,9 +55,9 @@ val restaurants = listOf(
     ),
     Restaurant(
         id = 4,
-        name = "Pizza House",
+        name = "Pizzería Italia",
         description = "La mejor pizza artesanal al horno",
-        imageUrl = "https://img.freepik.com/premium-vector/pizza-house-food-restaurant-vector-logo-badge-icons-set-illustration_1049408-12.jpg",
+        imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXI37sAlkxGGmKOvrfSf9WQMkJFlIe6sNzTA&s",
         categories = listOf("Comida Italiana"),
         menu = listOf(
             Dish(10, "Pizza Margarita", "Tomate, mozzarella y albahaca fresca", "https://www.clarin.com/img/2023/08/01/SL3EslnOA_1200x630__1.jpg"),
@@ -93,7 +93,7 @@ val restaurants = listOf(
         id = 7,
         name = "Green Monkey",
         description = "Comida saludable y natural",
-        imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZDzxr5ucLSaXZZ3QFwFFKSBAyERPP1Mjgg&s",
+        imageUrl = "https://www.tapasmagazine.es/wp-content/uploads/2020/03/DSC_0116-3.jpg",
         categories = listOf("Comida Saludable"),
         menu = listOf(
             Dish(19, "Ensalada detox", "Kale, aguacate, quinoa y limón", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0NOBUQNMgoVQzBkAwVC-NZI-u4UZ3zEpKmA&s"),
@@ -117,7 +117,7 @@ val restaurants = listOf(
         id = 9,
         name = "Super Marino",
         description = "Mariscos frescos y sabores costeros",
-        imageUrl = "https://supermarino.com/wp-content/uploads/2022/04/logo.png",
+        imageUrl = "https://www.paulinacocina.net/wp-content/uploads/2024/05/receta-de-camarones-empanizados-paulina-cocina-recetas-1722444280-1200x900.jpg",
         categories = listOf("Mariscos", "Comida Internacional"),
         menu = listOf(
             Dish(25, "Camarones al ajillo", "Camarones salteados en mantequilla y ajo", "https://www.recetasnestlecam.com/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/a3edc0910e9c2e3c8a7670600542088a.jpg?itok=FNfc2KtE"),

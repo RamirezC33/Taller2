@@ -6,9 +6,12 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -23,12 +26,17 @@ fun RestaurantsScreen(navController: NavHostController, restaurants: List<Restau
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("FoodSpot") })
+            TopAppBar(
+                title = { Text("FoodSpot", color = Color.Black) },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.White)
+            )
         },
         bottomBar = {
             BottomNavBar(navController)
-        }
-    ) { padding ->
+        },
+        containerColor = Color.White
+    )
+    { padding ->
         LazyColumn(modifier = Modifier.padding(padding)) {
             categories.forEach { (category, list) ->
                 item {
@@ -54,8 +62,9 @@ fun RestaurantsScreen(navController: NavHostController, restaurants: List<Restau
                                     contentDescription = null,
                                     modifier = Modifier
                                         .height(120.dp)
+                                        .clip(RoundedCornerShape(8.dp))
                                         .fillMaxWidth(),
-                                    contentScale = ContentScale.Crop
+                                contentScale = ContentScale.Crop
                                 )
                                 Text(restaurant.name, style = MaterialTheme.typography.bodyMedium)
                             }

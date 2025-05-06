@@ -27,7 +27,7 @@ fun AppNavigation() {
             RestaurantsScreen(navController, restaurants)
         }
         composable(Screen.Search.route) {
-            SearchScreen()
+            SearchScreen(navController, restaurants)
         }
         composable(Screen.Orders.route) {
             OrdersScreen()
